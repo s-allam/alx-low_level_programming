@@ -1,26 +1,19 @@
 #include "main.h"
 /**
- *print_number - prints an integer.
- *only using the putchar function.
- *noarrays and pointers.
- *@n: integer to be printed.
- *
- *Return: void.
- */
-void print_number(int n)
+*print_chessboard - a function that prints the chessboard.
+*@a: array containing board elements
+*returns nothing
+*/
+
+void print_chessboard(char (*a)[8])
 {
-	unsigned int num;
-/*check if number is negative*/
-	num = n;
-	if (n < 0)
+	int i, j;
+
+	for (i = 0; a[i][7]; i++)
 	{
-		_putchar(45);
-		num = -n;
+		for (j = 0; j < 8; j++)
+			_putchar(a[i][j]);
+		_putchar('\n');
 	}
-/* print number by recursion*/
-	if (num / 10)
-	{
-		print_number(num / 10);
-	}
-	_putchar((num % 10) + '0');
+
 }
