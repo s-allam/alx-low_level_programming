@@ -1,19 +1,21 @@
 #include "main.h"
 /**
-*print_chessboard - a function that prints the chessboard.
-*@a: array containing board elements
-*returns nothing
+* print_number - prints an integer
+*@n:integer to be printed
+*
 */
-
-void print_chessboard(char (*a)[8])
+void print_number(int n)
 {
-	int i, j;
+	unsigned int num = n;
 
-	for (i = 0; a[i][7]; i++)
+	if (n < 0)
 	{
-		for (j = 0; j < 8; j++)
-			_putchar(a[i][j]);
-		_putchar('\n');
+		_putchar('-');
+		num = -num;
 	}
 
+	if ((num / 10) > 0)
+		print_number(num / 10);
+
+	_putchar((num % 10) + '0');
 }
